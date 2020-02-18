@@ -1,0 +1,23 @@
+{
+    "test": ".*.ts$",
+    "jsc": {
+        "parser": {
+            "syntax": "typescript",
+            "jsx": true,
+            "dynamicImport": false,
+            "numericSeparator": false,
+            "classPrivateProperty": false,
+            "privateMethod": false,
+            "classProperty": false,
+            "functionBind": false,
+            "exportDefaultFrom": false,
+            "exportNamespaceFrom": false,
+            "decorators": false,
+            "decoratorsBeforeExport": false,
+            "nullishCoalescing": false,
+            "topLevelAwait": false,
+            "importMeta": false,
+            "optionalChaining": false
+        }
+    }
+}

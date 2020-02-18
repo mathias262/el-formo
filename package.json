@@ -1,0 +1,19 @@
+{
+    "name": "el-formo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@swc/core": "^1.1.25",
+        "prettier": "^1.19.1",
+        "swc-loader": "^0.1.8",
+        "webpack": "^4.41.6",
+        "webpack-cli": "^3.3.11"
+    }
+}
