@@ -17,11 +17,12 @@ export class PocForm extends React.Component {
     render() {
         const className = css`
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             grid-gap: 1rem;
-            padding: 2rem;
-            background: #f1f2f7;
+            padding: 1rem;
+            background: lightgray;
         `
+
         return (
             <CForm className={className} onSubmit={handleSubmit}>
                 <CInput

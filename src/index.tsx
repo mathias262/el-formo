@@ -7,9 +7,11 @@ import { Home } from './pages/Home'
 setPragma(React.createElement)
 
 glob`
+    html {
+        font-size: 20px;
+    }
     body {
         margin: 0;
-        font-size: 20px;
     }
     * {
         box-sizing: border-box;

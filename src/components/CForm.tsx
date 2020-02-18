@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { css } from 'goober'
 
 // https://html.spec.whatwg.org/multipage/#the-form-element
 
@@ -8,8 +9,12 @@ type FormProps = {
 }
 
 export const CForm = (props: FormProps) => {
+    const className = css`
+        padding: 2rem;
+        background: #f1f2f7;
+    `
     return (
-        <form onSubmit={props.onSubmit} {...props}>
+        <form className={className} onSubmit={props.onSubmit} {...props}>
             {props.children}
         </form>
     )
