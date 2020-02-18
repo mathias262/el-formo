@@ -12,6 +12,9 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'dist')
     },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
     module: {
         rules: [
             {
