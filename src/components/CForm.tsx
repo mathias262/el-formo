@@ -1,21 +1,16 @@
 import * as React from 'react'
 
+// https://html.spec.whatwg.org/multipage/#the-form-element
+
 type FormProps = {
-    action?: string
-    method?: string
-    children?: any
     onSubmit: (e: any) => void
+    [x: string]: any
 }
 
-export const CForm = ({
-    action = null,
-    method = null,
-    children = [],
-    onSubmit = () => {}
-}: FormProps) => {
+export const CForm = (props: FormProps) => {
     return (
-        <form action={action} method={method} onSubmit={onSubmit}>
-            {children}
+        <form onSubmit={props.onSubmit} {...props}>
+            {props.children}
         </form>
     )
 }

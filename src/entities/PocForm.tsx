@@ -1,4 +1,5 @@
 import React from 'react'
+import { css } from 'goober'
 
 import { CInput } from '../components/CInput'
 import { CButton } from '../components/CButton'
@@ -9,11 +10,32 @@ const handleSubmit = e => {
     console.log(e)
 }
 
-export const PocForm = () => {
-    return (
-        <CForm onSubmit={handleSubmit}>
-            <CInput />
-            <CButton>Submit</CButton>
-        </CForm>
-    )
+export class PocForm extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        const className = css`
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1rem;
+            padding: 2rem;
+            background: #f1f2f7;
+        `
+        return (
+            <CForm className={className} onSubmit={handleSubmit}>
+                <CInput
+                    type={'number'}
+                    name={'total-loan'}
+                    defaultValue={String(310000)}
+                />
+                <CInput
+                    type={'number'}
+                    name={'repayment-time'}
+                    defaultValue={String(12)}
+                />
+                <CButton variant={'success'}>Submit</CButton>
+            </CForm>
+        )
+    }
 }
