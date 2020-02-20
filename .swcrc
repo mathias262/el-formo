@@ -1,4 +1,5 @@
 {
+    "minify": true,
     "test": [
         ".*.ts$",
         ".*.tsx$"

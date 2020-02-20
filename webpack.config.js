@@ -1,8 +1,9 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin
 
 module.exports = {
-    mode: 'development',
     entry: path.resolve(__dirname, 'src/index.tsx'),
     output: {
         filename: 'bundle.js',
@@ -10,7 +11,9 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'dist')
+        contentBase: path.resolve(__dirname, 'dist'),
+        compress: true,
+        port: 1337
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
@@ -30,6 +33,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'El formo',
             template: path.resolve(__dirname, 'src/templates/index.html')
-        })
+        }),
+        new BundleAnalyzerPlugin()
     ]
 }
