@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDom from 'react'
+import ReactDOM from 'react-dom'
 import { setPragma, glob } from 'goober'
 
 import { Home } from './pages/Home'
@@ -18,4 +18,4 @@ glob`
     }
 `
 
-ReactDom.render(<Home />, document.getElementById('root'))
+ReactDOM.render(<Home />, document.getElementById('root'))
