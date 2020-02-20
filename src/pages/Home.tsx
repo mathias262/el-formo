@@ -1,8 +1,8 @@
-import { h, Component } from 'preact'
+import React from 'react'
 
 import { PocForm } from '../entities/PocForm'
 
-export class Home extends Component<{}, {}> {
+export class Home extends React.Component {
     constructor(props) {
         super(props)
     }

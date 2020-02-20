@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     ...root,
     mode: 'production',
-    devtool: 'inline-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, '../dist'),
         open: true,

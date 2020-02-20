@@ -4,9 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start:development": "webpack-dev-server --config ./webpack/development.config.js",
-        "start:production": "webpack-dev-server --config ./webpack/production.config.js",
-        "build": "webpack --config ./webpack/release.config.js",
+        "start": "webpack-dev-server --config ./webpack/development.config.js",
+        "release": "webpack --config ./webpack/release.config.js",
         "analyze:development": "webpack --profile --json > stats.json --config ./webpack/development.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist",
         "analyze:production": "webpack --profile --json > stats.json --config ./webpack/production.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist",
         "analyze:release": "webpack --profile --json > stats.json --config ./webpack/release.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist"
@@ -18,6 +17,8 @@
         "goober": "^1.7.1",
         "html-webpack-plugin": "^3.2.0",
         "prettier": "^1.19.1",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
         "swc-loader": "^0.1.8",
         "webpack": "^4.41.6",
         "webpack-bundle-analyzer": "^3.6.0",

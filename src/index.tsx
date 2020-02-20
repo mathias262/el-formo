@@ -1,9 +1,10 @@
-import { h, render } from 'preact'
+import React from 'react'
+import ReactDom from 'react'
 import { setPragma, glob } from 'goober'
 
 import { Home } from './pages/Home'
 
-setPragma(h)
+setPragma(React.createElement)
 
 glob`
     html {
@@ -17,4 +18,4 @@ glob`
     }
 `
 
-render(<Home />, document.getElementById('root'))
+ReactDom.render(<Home />, document.getElementById('root'))
