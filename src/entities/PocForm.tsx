@@ -5,7 +5,7 @@ import { CInput } from '../components/CInput'
 import { CButton } from '../components/CButton'
 import { CForm } from '../components/CForm'
 
-export class PocForm extends React.Component {
+export default class PocForm extends React.Component {
     constructor(props) {
         super(props)
     }

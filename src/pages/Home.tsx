@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PocForm } from '../entities/PocForm'
+const PocForm = React.lazy(() => import('../entities/PocForm'))
 
 export class Home extends React.Component {
     constructor(props) {
@@ -10,7 +10,9 @@ export class Home extends React.Component {
     render() {
         return (
             <main>
-                <PocForm />
+                <React.Suspense fallback={<div>loading...</div>}>
+                    <PocForm />
+                </React.Suspense>
             </main>
         )
     }
