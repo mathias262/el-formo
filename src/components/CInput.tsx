@@ -1,4 +1,4 @@
-import React from 'react'
+import { h } from 'preact'
 import { css } from 'goober'
 
 //https://html.spec.whatwg.org/multipage/input.html#the-input-element

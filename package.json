@@ -4,10 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "webpack-dev-server",
-        "build": "webpack --mode='production'",
-        "analyze": "webpack --mode='production' --profile --json > stats.json",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start:development": "webpack-dev-server --config ./webpack/development.config.js",
+        "start:production": "webpack-dev-server --config ./webpack/production.config.js",
+        "build": "webpack --config ./webpack/release.config.js",
+        "analyze:development": "webpack --profile --json > stats.json --config ./webpack/development.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist",
+        "analyze:production": "webpack --profile --json > stats.json --config ./webpack/production.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist",
+        "analyze:release": "webpack --profile --json > stats.json --config ./webpack/release.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist"
     },
     "author": "",
     "license": "ISC",
@@ -23,7 +25,6 @@
         "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0"
+        "preact": "^10.3.2"
     }
 }

@@ -1,18 +1,17 @@
-import React from 'react'
+import { h, Component } from 'preact'
 
 import { PocForm } from '../entities/PocForm'
 
-const handleSubmit = e => {
-    e.preventDefault()
-    console.log(e)
-}
+export class Home extends Component<{}, {}> {
+    constructor(props) {
+        super(props)
+    }
 
-export const Home = () => {
-    return (
-        <>
+    render() {
+        return (
             <main>
-                <PocForm onSubmit={handleSubmit} />
+                <PocForm />
             </main>
-        </>
-    )
+        )
+    }
 }

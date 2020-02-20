@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { h } from 'preact'
 import { css } from 'goober'
 
 // https://html.spec.whatwg.org/multipage/#the-form-element

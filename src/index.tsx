@@ -1,10 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import { h, render } from 'preact'
 import { setPragma, glob } from 'goober'
 
 import { Home } from './pages/Home'
 
-setPragma(React.createElement)
+setPragma(h)
 
 glob`
     html {
@@ -18,13 +17,4 @@ glob`
     }
 `
 
-class Root extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-    render() {
-        return <Home />
-    }
-}
-
-ReactDOM.render(<Root />, document.getElementById('root'))
+render(<Home />, document.getElementById('root'))

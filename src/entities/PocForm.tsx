@@ -1,19 +1,15 @@
-import React from 'react'
+import { h, Component } from 'preact'
 import { css } from 'goober'
 
 import { CInput } from '../components/CInput'
 import { CButton } from '../components/CButton'
 import { CForm } from '../components/CForm'
 
-const handleSubmit = e => {
-    e.preventDefault()
-    console.log(e)
-}
-
-export class PocForm extends React.Component {
+export class PocForm extends Component<{}, {}> {
     constructor(props) {
         super(props)
     }
+
     render() {
         const className = css`
             display: grid;
@@ -24,7 +20,7 @@ export class PocForm extends React.Component {
         `
 
         return (
-            <CForm className={className} onSubmit={handleSubmit}>
+            <CForm className={className} onSubmit={() => console.log}>
                 <CInput
                     type={'number'}
                     name={'total-loan'}
