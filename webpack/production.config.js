@@ -1,20 +1,10 @@
 const root = require('./root.config')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     ...root,
     mode: 'production',
-    devServer: {
-        contentBase: path.resolve(__dirname, '../dist'),
-        open: true,
-        compress: true,
-        port: 1337
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'El formo',
-            template: path.resolve(__dirname, '../src/templates/index.html')
-        })
-    ]
+    optimization: {
+        minimizer: [new UglifyJsPlugin()]
+    }
 }

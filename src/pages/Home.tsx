@@ -1,6 +1,9 @@
 import React from 'react'
+import loadable from '@loadable/component'
 
-const PocForm = React.lazy(() => import('../entities/PocForm'))
+const PocForm = loadable(() => import('../entities/PocForm'), {
+    fallback: <div>Loading...</div>
+})
 
 export class Home extends React.Component {
     constructor(props) {
@@ -10,9 +13,7 @@ export class Home extends React.Component {
     render() {
         return (
             <main>
-                <React.Suspense fallback={<div>loading...</div>}>
-                    <PocForm />
-                </React.Suspense>
+                <PocForm />
             </main>
         )
     }

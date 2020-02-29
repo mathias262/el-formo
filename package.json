@@ -4,29 +4,34 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "webpack-dev-server --config ./webpack/development.config.js",
-        "release": "webpack --config ./webpack/release.config.js",
+        "start": "npm run development",
+        "development": "webpack-dev-server --config ./webpack/development.config.js",
+        "production": "webpack-dev-server --config ./webpack/production.config.js",
+        "build": "webpack --config ./webpack/production.config.js",
         "analyze:development": "webpack --profile --json > stats.json --config ./webpack/development.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist",
-        "analyze:production": "webpack --profile --json > stats.json --config ./webpack/production.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist",
-        "analyze:release": "webpack --profile --json > stats.json --config ./webpack/release.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist"
+        "analyze:production": "webpack --profile --json > stats.json --config ./webpack/production.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@svgr/webpack": "^5.2.0",
         "@swc/core": "^1.1.25",
         "@types/react": "^16.9.21",
+        "feather-icons": "^4.26.0",
         "goober": "^1.7.1",
         "html-webpack-plugin": "^3.2.0",
         "prettier": "^1.19.1",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "swc-loader": "^0.1.8",
+        "uglifyjs-webpack-plugin": "^2.2.0",
         "webpack": "^4.41.6",
         "webpack-bundle-analyzer": "^3.6.0",
         "webpack-cli": "^3.3.11",
         "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
+        "@loadable/component": "^5.12.0",
         "preact": "^10.3.2"
     }
 }
