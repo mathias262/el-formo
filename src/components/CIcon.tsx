@@ -1,35 +1,69 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
+import ReactDOM from 'react-dom'
 
-import Icons from '../icons'
+import FeatherIcons from 'feather-icons'
 
 type IconProps = {
     name: string
-    size: string
     [x: string]: any
 }
 
 export const CIcon = (props: IconProps) => {
-    let { fill, stroke = 'currentColor', size } = props
+    let {
+        stroke = 'currentColor',
+        width = '1em',
+        height = '1em',
+        cacheRoot = document.getElementById('svg-root'),
+        cache = true
+    } = props
 
-    console.log(Icons)
+    const icon = FeatherIcons.icons[props.name]
+    const iconId = `#svg-${props.name}`
 
-    const Component = Icons[props.name]
-    const keys = Object.keys(Icons)
-
-    if (keys.includes(props.name)) {
+    if (cache && cacheRoot) {
+        const isCached = cacheRoot.querySelector(iconId)
         return (
-            <Component
-                fill={fill}
-                stroke={stroke}
-                width={size}
-                height={size}
-                viewBox={'0 0 38 38'}
-                xmlns="http://www.w3.org/2000/svg"
-                {...props}
-                size={undefined}
-            />
+            <>
+                <svg
+                    {...icon.attrs}
+                    className={false}
+                    height={height}
+                    role="img"
+                    stroke={stroke}
+                    // strokeLinecap={false}
+                    // strokeLinejoin={false}
+                    width={width}
+                    {...props}
+                >
+                    <title>Icon {props.name}</title>
+                    <use href={iconId} xlinkHref={iconId}></use>
+                </svg>
+                {!isCached &&
+                    ReactDOM.createPortal(
+                        <g
+                            id={iconId.slice(1, iconId.length)}
+                            dangerouslySetInnerHTML={{
+                                __html: icon.toString()
+                            }}
+                        ></g>,
+                        cacheRoot
+                    )}
+            </>
         )
     } else {
-        throw Error(`CIcon with name: ${props.name}, doesn't exist!`)
+        return (
+            <svg
+                {...icon.attrs}
+                className={false}
+                height={height}
+                role="img"
+                stroke={stroke}
+                // strokeLinecap={false}
+                // strokeLinejoin={false}
+                width={width}
+                {...props}
+                dangerouslySetInnerHTML={{ __html: icon.toString() }}
+            ></svg>
+        )
     }
 }

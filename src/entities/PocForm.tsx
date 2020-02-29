@@ -20,6 +20,10 @@ export default class PocForm extends React.Component {
             background: lightgray;
         `
 
+        const iconRotation = css`
+            transform: rotate(90deg);
+        `
+
         return (
             <CForm className={className} onSubmit={() => console.log}>
                 <CInput
@@ -33,7 +37,11 @@ export default class PocForm extends React.Component {
                     defaultValue={String(12)}
                 />
                 <CButton variant={'success'}>Submit</CButton>
-                <CIcon name={'Spinner'} size={'1em'} />
+                <CIcon name={'airplay'} width="2rem" height="2rem" />
+                <CIcon name={'activity'} width="2rem" height="2rem" />
+                <CIcon name={'anchor'} width="2rem" height="2rem" />
+                <CIcon name={'arrow-right'} width="2rem" height="2rem" />
+                <CIcon name={'arrow-down'} width="2rem" height="2rem" />
             </CForm>
         )
     }
