@@ -4,6 +4,7 @@ import { css } from 'goober'
 import { CInput } from '../components/CInput'
 import { CButton } from '../components/CButton'
 import { CForm } from '../components/CForm'
+import { CIcon } from '../components/CIcon'
 
 export default class PocForm extends React.Component {
     constructor(props) {
@@ -32,6 +33,7 @@ export default class PocForm extends React.Component {
                     defaultValue={String(12)}
                 />
                 <CButton variant={'success'}>Submit</CButton>
+                <CIcon name={'Spinner'} size={'1em'} />
             </CForm>
         )
     }
