@@ -8,7 +8,7 @@ type IconProps = {
     [x: string]: any
 }
 
-export const CIcon = (props: IconProps) => {
+const CIcon = (props: IconProps) => {
     let {
         stroke = 'currentColor',
         width = '1em',
@@ -66,3 +66,5 @@ export const CIcon = (props: IconProps) => {
         )
     }
 }
+
+export default CIcon

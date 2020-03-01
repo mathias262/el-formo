@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { setPragma, glob } from 'goober'
 
-import PHome from './layouts/PHome'
+import RHome from './@routes/RHome'
 
 setPragma(React.createElement)
 
@@ -18,4 +18,4 @@ glob`
     }
 `
 
-ReactDOM.render(<PHome />, document.getElementById('root'))
+ReactDOM.render(<RHome />, document.getElementById('root'))

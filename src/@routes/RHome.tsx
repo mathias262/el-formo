@@ -1,11 +1,11 @@
 import React from 'react'
 import loadable from '@loadable/component'
 
-const EForm = loadable(() => import('../entities/EForm'), {
+const EForm = loadable(() => import('../@entities/EForm'), {
     fallback: <div>Loading...</div>
 })
 
-const PHome = props => {
+const RHome = props => {
     return (
         <main>
             <EForm />
@@ -13,4 +13,4 @@ const PHome = props => {
     )
 }
 
-export default PHome
+export default RHome

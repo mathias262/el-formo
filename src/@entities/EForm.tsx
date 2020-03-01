@@ -1,10 +1,12 @@
 import React from 'react'
 import { css } from 'goober'
+import loadable from '@loadable/component'
 
-import { CInput } from '../components/CInput'
-import { CButton } from '../components/CButton'
-import { CForm } from '../components/CForm'
-import { CIcon } from '../components/CIcon'
+import { CInput } from '../@components/CInput'
+import { CButton } from '../@components/CButton'
+import { CForm } from '../@components/CForm'
+
+const CIcon = loadable(() => import('../@components/CIcon'))
 
 const EForm = props => {
     const className = css`
