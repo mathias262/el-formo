@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'goober'
-import { CssFocus } from '../constants/css'
+import { STYLES } from '../constants/'
 
 // https://html.spec.whatwg.org/#the-button-element
 
@@ -17,12 +17,18 @@ export const CButton = (props: CButtonProps) => {
                 color: white;
                 background: green;
                 border: solid 2px darkgreen;
+                ${STYLES.pseudo.focus({
+                    color: 'lightgreen'
+                })}
             `
             case 'error':
                 return `
                 color: white;
-                background: green;
-                border: solid 2px darkgreen;
+                background: red;
+                border: solid 2px darkred;
+                ${STYLES.pseudo.focus({
+                    color: 'pink'
+                })}
             `
         }
     }
@@ -37,7 +43,6 @@ export const CButton = (props: CButtonProps) => {
         align-items: center;
         grid-gap: 0.5rem;
         cursor: pointer;
-        ${CssFocus}
     `
     return (
         <button className={className} {...props}>
