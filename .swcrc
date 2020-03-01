@@ -1,4 +1,7 @@
 {
+    "env": {
+        "targets": "last 1 version, > 1%, IE 10"
+    },
     "minify": true,
     "test": [
         ".*.ts$",
