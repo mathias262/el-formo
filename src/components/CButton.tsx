@@ -36,6 +36,9 @@ export const CButton = (props: CButtonProps) => {
         align-items: center;
         grid-gap: 0.5rem;
         cursor: pointer;
+        &:focus {
+            box-shadow: rgba(0, 109, 255, 0.4) 0px 0px 0px 0.2em;
+        }
     `
     return (
         <button className={className} {...props}>

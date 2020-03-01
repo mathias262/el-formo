@@ -38,6 +38,9 @@ export default class PocForm extends React.Component {
                 />
                 <CButton variant={'success'}>Submit</CButton>
                 <CIcon name={'airplay'} width="2rem" height="2rem" />
+                <CIcon name={'airplay'} width="2rem" height="2rem" />
+                <CIcon name={'airplay'} width="2rem" height="2rem" />
+                <CIcon name={'airplay'} width="2rem" height="2rem" />
                 <CIcon name={'activity'} width="2rem" height="2rem" />
                 <CIcon name={'anchor'} width="2rem" height="2rem" />
                 <CIcon name={'arrow-right'} width="2rem" height="2rem" />

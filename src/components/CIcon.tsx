@@ -19,6 +19,7 @@ export const CIcon = (props: IconProps) => {
 
     const icon = FeatherIcons.icons[props.name]
     const iconId = `#svg-${props.name}`
+    const ariaLabel = `Icon ${props.name}`
 
     if (cache && cacheRoot) {
         const isCached = cacheRoot.querySelector(iconId)
@@ -26,21 +27,20 @@ export const CIcon = (props: IconProps) => {
             <>
                 <svg
                     {...icon.attrs}
+                    aria-label={ariaLabel}
                     className={false}
                     height={height}
                     role="img"
                     stroke={stroke}
-                    // strokeLinecap={false}
-                    // strokeLinejoin={false}
                     width={width}
                     {...props}
                 >
-                    <title>Icon {props.name}</title>
                     <use href={iconId} xlinkHref={iconId}></use>
                 </svg>
                 {!isCached &&
                     ReactDOM.createPortal(
                         <g
+                            aria-label={ariaLabel}
                             id={iconId.slice(1, iconId.length)}
                             dangerouslySetInnerHTML={{
                                 __html: icon.toString()
@@ -54,12 +54,11 @@ export const CIcon = (props: IconProps) => {
         return (
             <svg
                 {...icon.attrs}
+                aria-label={ariaLabel}
                 className={false}
                 height={height}
                 role="img"
                 stroke={stroke}
-                // strokeLinecap={false}
-                // strokeLinejoin={false}
                 width={width}
                 {...props}
                 dangerouslySetInnerHTML={{ __html: icon.toString() }}
