@@ -17,7 +17,7 @@ export const CIcon = (props: IconProps) => {
         cache = true
     } = props
 
-    const icon = FeatherIcons.icons[props.name]
+    const icon = FeatherIcons['icons'][props.name]
     const iconId = `#svg-${props.name}`
     const ariaLabel = `Icon ${props.name}`
 
