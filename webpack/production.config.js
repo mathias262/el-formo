@@ -1,10 +1,11 @@
 const root = require('./root.config')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
     ...root,
     mode: 'production',
     optimization: {
-        minimizer: [new UglifyJsPlugin()]
+        minimize: true,
+        minimizer: [new TerserPlugin()]
     }
 }
