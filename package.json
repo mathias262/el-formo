@@ -3,16 +3,16 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "private": false,
     "scripts": {
         "start": "npm run development",
         "development": "webpack-dev-server --config ./webpack/development.config.js",
         "production": "webpack-dev-server --config ./webpack/production.config.js",
         "build": "webpack --config ./webpack/production.config.js",
-        "analyze:development": "webpack --profile --json > stats.json --config ./webpack/development.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist",
-        "analyze:production": "webpack --profile --json > stats.json --config ./webpack/production.config.js; ./node_modules/webpack-bundle-analyzer/lib/bin/analyzer.js ./stats.json ./dist"
+        "analyze": "./scripts/stats.fish"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "Mathias Iversen <work@mathiasiversen.com>",
+    "license": "MIT",
     "devDependencies": {
         "@svgr/webpack": "^5.2.0",
         "@swc/core": "^1.1.25",
