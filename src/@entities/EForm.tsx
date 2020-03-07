@@ -5,8 +5,7 @@ import loadable from '@loadable/component'
 import { CInput } from '../@components/CInput'
 import { CButton } from '../@components/CButton'
 import { CForm } from '../@components/CForm'
-
-const CIcon = loadable(() => import('../@components/CIcon'))
+import CIcon from '../@components/CIcon'
 
 const EForm = props => {
     const className = css`
@@ -33,7 +32,7 @@ const EForm = props => {
             <CIcon name={'airplay'} width="2em" height="2em" />
             <CIcon name={'airplay'} width="2em" height="2em" />
             <CIcon name={'airplay'} width="2em" height="2em" />
-            <CIcon name={'activity'} width="2em" height="2em" />
+            <CIcon name={'activity'} width="2em" height="2em" cache={false} />
             <CIcon name={'anchor'} width="2em" height="2em" />
             <CIcon name={'arrow-right'} width="2em" height="2em" />
             <CIcon name={'arrow-down'} width="2em" height="2em" />

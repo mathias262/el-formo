@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: path.resolve(__dirname, '../src/root.tsx'),
     output: {
-        filename: '[contenthash].js',
+        filename: '[name].[contenthash].js',
+        chunkFilename: '[name].[contenthash].js',
         path: path.resolve(__dirname, '../dist')
     },
     optimization: {
