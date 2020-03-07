@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'goober'
-import { STYLES } from '../constants/'
+import STYLES from '../styles/'
 
 // https://html.spec.whatwg.org/#the-button-element
 
