@@ -4,13 +4,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: path.resolve(__dirname, '../src/root.tsx'),
     output: {
-        filename: '[name].[contenthash].js',
-        chunkFilename: '[name].[contenthash].js',
+        filename: '[name].[contenthash:8].js',
+        chunkFilename: '[name].[contenthash:8].js',
         path: path.resolve(__dirname, '../dist')
     },
     optimization: {
         splitChunks: {
-            chunks: 'all'
+            cacheGroups: {
+                svg: {
+                    test: /[\\/]icon-builder-example[\\/]/,
+                    name(module, chunks, cacheGroupKey) {
+                        const moduleFileName = module
+                            .identifier()
+                            .split('/')
+                            .reduceRight(item => item)
+                            .slice(0, -3)
+                        return `${cacheGroupKey}-${moduleFileName}`
+                    },
+                    chunks: 'all',
+                    enforce: true
+                }
+            }
         }
     },
     resolve: {
