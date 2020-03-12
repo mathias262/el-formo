@@ -23,6 +23,20 @@ module.exports = {
                     },
                     chunks: 'all',
                     enforce: true
+                },
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name(module, chunks, cacheGroupKey) {
+                        const moduleFileName = module.context.match(
+                            /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+                        )[1]
+                        return `${cacheGroupKey}.${moduleFileName.replace(
+                            '@',
+                            ''
+                        )}`
+                    },
+                    chunks: 'all',
+                    enforce: true
                 }
             }
         }

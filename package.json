@@ -9,7 +9,8 @@
         "development": "webpack-dev-server --config ./webpack/development.config.js",
         "production": "webpack-dev-server --config ./webpack/production.config.js",
         "build": "webpack --config ./webpack/production.config.js",
-        "analyze": "./scripts/stats.fish"
+        "analyze:development": "./scripts/stats.fish development",
+        "analyze:production": "./scripts/stats.fish production"
     },
     "author": "Mathias Iversen <work@mathiasiversen.com>",
     "license": "MIT",
