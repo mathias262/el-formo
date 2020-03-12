@@ -1,15 +1,15 @@
 import React from 'react'
 import { css } from 'goober'
-import STYLES from '../styles/'
+import STYLES from '../styles'
 
 // https://html.spec.whatwg.org/#the-button-element
 
-type CButtonProps = {
+export interface ElButtonProps {
     variant: 'success' | 'error'
     [x: string]: string
 }
 
-export const CButton = (props: CButtonProps) => {
+const ElButton = (props: ElButtonProps) => {
     const theme = variant => {
         switch (variant) {
             case 'success':
@@ -50,3 +50,5 @@ export const CButton = (props: CButtonProps) => {
         </button>
     )
 }
+
+export default ElButton

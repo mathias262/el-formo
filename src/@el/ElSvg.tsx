@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import { I18n } from '../@types'
 
-type IconProps = {
+// https://www.w3.org/TR/SVG11/
+
+export interface ElSvgProps {
     name: string
+    i18n: I18n
     [x: string]: any
 }
 
-const getIcon = async name => {
-    const { default: icon } = await import(
+const getSvg = async name => {
+    const { default: svg } = await import(
         `../../../icon-builder-example/build/module-icons/${name}.js`
     )
-    return icon
+    return svg
 }
 
-const CIcon = (props: IconProps) => {
-    let {
+const ElSvg = (props: ElSvgProps) => {
+    const {
         stroke = 'currentColor',
         fill = 'none',
         strokeLinecap = 'round',
@@ -28,23 +32,22 @@ const CIcon = (props: IconProps) => {
         cache = true
     } = props
 
-    const [icon, setIcon] = useState({
+    const [svg, setSvg] = useState({
         source: '',
         metadata: { width: '', height: '' }
     })
 
-    getIcon(props.name)
-        .then(icon => {
-            setIcon(icon)
+    getSvg(props.name)
+        .then(svg => {
+            setSvg(svg)
         })
         .catch(error => console.log(error))
 
-    const ariaLabel = `Icon ${props.name}`
-    const iconId = `#svg-${props.name}`
-    const isCached = cacheRoot.querySelector(iconId)
+    const svgId = `#svg-${props.name}`
+    const isCached = cacheRoot.querySelector(svgId)
 
     const defaultsSvgAttr = {
-        ariaLabel,
+        'aria-label': props.i18n.ariaLabel,
         height,
         role,
         width,
@@ -61,29 +64,28 @@ const CIcon = (props: IconProps) => {
 
     return (
         <>
-            {!icon.source && <div>...</div>}
-            {icon.source && cache && cacheRoot && (
+            {!svg.source && <div>...</div>}
+            {svg.source && cache && cacheRoot && (
                 <>
                     <svg {...defaultsSvgAttr} {...props}>
-                        <use href={iconId} xlinkHref={iconId}></use>
+                        <use href={svgId} xlinkHref={svgId}></use>
                     </svg>
                     {!isCached &&
                         ReactDOM.createPortal(
                             <g
                                 dangerouslySetInnerHTML={{
-                                    __html: icon.source
+                                    __html: svg.source
                                 }}
-                                id={iconId.slice(1, iconId.length)}
+                                id={svgId.slice(1, svgId.length)}
                                 {...defaultsPathAttr}
                             ></g>,
                             cacheRoot
                         )}
                 </>
             )}
-            {icon.source && !cache && (
+            {svg.source && !cache && (
                 <svg
-                    aria-label={ariaLabel}
-                    dangerouslySetInnerHTML={{ __html: icon.source }}
+                    dangerouslySetInnerHTML={{ __html: svg.source }}
                     {...defaultsSvgAttr}
                     {...defaultsPathAttr}
                     {...props}
@@ -93,4 +95,4 @@ const CIcon = (props: IconProps) => {
     )
 }
 
-export default CIcon
+export default ElSvg

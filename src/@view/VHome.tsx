@@ -1,16 +1,16 @@
 import React from 'react'
 import loadable from '@loadable/component'
 
-const EForm = loadable(() => import('../@entities/EForm'), {
+const EeForm = loadable(() => import('../@elEntity/EeForm'), {
     fallback: <div>Loading...</div>
 })
 
-const RHome = props => {
+const PaHome = props => {
     return (
         <main>
-            <EForm />
+            <EeForm />
         </main>
     )
 }
 
-export default RHome
+export default PaHome

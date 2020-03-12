@@ -3,12 +3,12 @@ import { css } from 'goober'
 
 // https://html.spec.whatwg.org/multipage/#the-form-element
 
-type FormProps = {
+export interface FormProps {
     onSubmit: (e: any) => void
     [x: string]: any
 }
 
-export const CForm = (props: FormProps) => {
+const ElForm = (props: FormProps) => {
     const className = css`
         padding: 2rem;
         background: #f1f2f7;
@@ -19,3 +19,5 @@ export const CForm = (props: FormProps) => {
         </form>
     )
 }
+
+export default ElForm
