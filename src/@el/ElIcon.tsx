@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import { I18n } from '../@types'
 
 // https://www.w3.org/TR/SVG11/
 
-export interface ElSvgProps {
+export interface ElIconI18n {
+    ariaLabel: string
+}
+
+export interface ElIconProps {
     name: string
-    i18n: I18n
+    i18n: ElIconI18n
     [x: string]: any
 }
 
@@ -17,7 +20,7 @@ const getSvg = async name => {
     return svg
 }
 
-const ElSvg = (props: ElSvgProps) => {
+const ElIcon = ({ i18n, ...props }: ElIconProps) => {
     const {
         stroke = 'currentColor',
         fill = 'none',
@@ -47,7 +50,7 @@ const ElSvg = (props: ElSvgProps) => {
     const isCached = cacheRoot.querySelector(svgId)
 
     const defaultsSvgAttr = {
-        'aria-label': props.i18n.ariaLabel,
+        'aria-label': i18n.ariaLabel,
         height,
         role,
         width,
@@ -95,4 +98,4 @@ const ElSvg = (props: ElSvgProps) => {
     )
 }
 
-export default ElSvg
+export default ElIcon

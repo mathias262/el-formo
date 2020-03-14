@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { setPragma, glob } from 'goober'
 
-import VHome from './@view/VHome'
+import VHome from './@views/VHome'
 
 setPragma(React.createElement)
 

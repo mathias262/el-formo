@@ -4,9 +4,9 @@ import { css } from 'goober'
 import ElInput from '../@el/ElInput'
 import ElButton from '../@el/ElButton'
 import ElForm from '../@el/ElForm'
-import ElSvg from '../@el/ElSvg'
+import ElIcon from '../@el/ElIcon'
 
-const EeForm = props => {
+const EsRegistrationForm = props => {
     const className = css`
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -27,44 +27,50 @@ const EeForm = props => {
                 defaultValue={String(12)}
             />
             <ElButton variant={'success'}>Submit</ElButton>
-            <ElSvg
+            <ElIcon
                 name={'airplay'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon airplay' }}
             />
-            <ElSvg
+            <ElIcon
                 name={'airplay'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon airplay' }}
             />
-            <ElSvg
+            <ElIcon
                 name={'airplay'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon airplay' }}
             />
-            <ElSvg
+            <ElIcon
                 name={'activity'}
                 width="2em"
                 height="2em"
                 cache={false}
                 i18n={{ ariaLabel: 'Icon activity' }}
             />
-            <ElSvg
+            <ElIcon
                 name={'anchor'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon anchor' }}
             />
-            <ElSvg
+            <ElIcon
                 name={'arrow-right'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon arrow-right' }}
             />
-            <ElSvg
+            <ElIcon
+                name={'arrow-down'}
+                width="2em"
+                height="2em"
+                i18n={{ ariaLabel: 'Icon arrow-down' }}
+            />
+            <ElIcon
                 name={'arrow-down'}
                 width="2em"
                 height="2em"
@@ -74,4 +80,4 @@ const EeForm = props => {
     )
 }
 
-export default EeForm
+export default EsRegistrationForm
