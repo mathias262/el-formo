@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { css } from 'goober'
-import STYLES from '../styles'
+import STYLES from '../utils/styles/styles'
 
 // https://html.spec.whatwg.org/#the-button-element
 
+type ChildElement = string | JSX.Element | Array<JSX.Element>
+
 export interface ElButtonProps {
-    variant: 'success' | 'error'
-    [x: string]: string
+    variant?: 'success' | 'error'
+    children?: ChildElement
+    style?: string
+    [key: string]: ChildElement
 }
 
-const ElButton = (props: ElButtonProps) => {
+const ElButton = ({ style, variant, children, ...rest }: ElButtonProps) => {
     const theme = variant => {
         switch (variant) {
             case 'success':
@@ -34,19 +38,21 @@ const ElButton = (props: ElButtonProps) => {
     }
 
     const className = css`
-        ${theme(props.variant)}
         padding: 0.5rem;
         margin: 0;
         font-size: 1rem;
         display: grid;
+        grid-auto-flow: column;
         justify-content: center;
         align-items: center;
         grid-gap: 0.5rem;
         cursor: pointer;
+        ${theme(variant)}
+        ${style}
     `
     return (
-        <button className={className} {...props}>
-            {props.children}
+        <button className={className} {...rest}>
+            <>{children}</>
         </button>
     )
 }

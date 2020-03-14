@@ -1,10 +1,13 @@
 import React from 'react'
 import { css } from 'goober'
+import STYLES from '../utils/styles/styles'
 
-import ElInput from '../@el/ElInput'
-import ElButton from '../@el/ElButton'
-import ElForm from '../@el/ElForm'
-import ElIcon from '../@el/ElIcon'
+import ElInput from '../@elements/ElInput'
+import ElButton from '../@elements/ElButton'
+import ElForm from '../@elements/ElForm'
+import ElIcon from '../@elements/ElIcon'
+
+const Text = props => <span>{props.children}</span>
 
 const EsRegistrationForm = props => {
     const className = css`
@@ -14,6 +17,7 @@ const EsRegistrationForm = props => {
         padding: 1rem;
         background: lightgray;
     `
+
     return (
         <ElForm className={className} onSubmit={() => console.log}>
             <ElInput
@@ -26,7 +30,15 @@ const EsRegistrationForm = props => {
                 name={'repayment-time'}
                 defaultValue={String(12)}
             />
-            <ElButton variant={'success'}>Submit</ElButton>
+            <ElButton variant="success">
+                <ElIcon
+                    name={'airplay'}
+                    width="1em"
+                    height="1em"
+                    i18n={{ ariaLabel: 'Icon airplay' }}
+                />
+                <Text>Hej</Text>
+            </ElButton>
             <ElIcon
                 name={'airplay'}
                 width="2em"

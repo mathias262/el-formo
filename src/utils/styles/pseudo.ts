@@ -1,4 +1,4 @@
-import { StyleProps } from './index'
+import { StyleProps } from './styles'
 
 const focus = ({ color = 'green' }: StyleProps) => {
     return `

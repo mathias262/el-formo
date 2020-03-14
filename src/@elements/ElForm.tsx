@@ -12,6 +12,7 @@ const ElForm = (props: FormProps) => {
     const className = css`
         padding: 2rem;
         background: #f1f2f7;
+        ${props.style}
     `
     return (
         <form className={className} onSubmit={props.onSubmit} {...props}>

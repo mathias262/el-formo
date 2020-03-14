@@ -2,7 +2,7 @@ import React from 'react'
 import loadable from '@loadable/component'
 
 const EsRegistrationForm = loadable(
-    () => import('../@elBlocks/EsRegistrationForm'),
+    () => import('../@entities/EsRegistrationForm'),
     {
         fallback: <div>Loading...</div>
     }
