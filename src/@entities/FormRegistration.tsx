@@ -2,14 +2,13 @@ import React from 'react'
 import { css } from 'goober'
 import STYLES from '../utils/styles/styles'
 
-import ElInput from '../@elements/ElInput'
-import ElButton from '../@elements/ElButton'
-import ElForm from '../@elements/ElForm'
-import ElIcon from '../@elements/ElIcon'
+import Input from '../@elements/Input'
+import Button from '../@elements/Button'
+import Form from '../@elements/Form'
+import Icon from '../@elements/Icon'
+import Text from '../@elements/Text'
 
-const Text = props => <span>{props.children}</span>
-
-const EsRegistrationForm = props => {
+const FormRegistration = props => {
     const className = css`
         display: grid;
         grid-template-columns: repeat(6, 1fr);
@@ -19,77 +18,77 @@ const EsRegistrationForm = props => {
     `
 
     return (
-        <ElForm className={className} onSubmit={() => console.log}>
-            <ElInput
+        <Form className={className} onSubmit={() => console.log}>
+            <Input
                 type={'number'}
                 name={'total-loan'}
                 defaultValue={String(310000)}
             />
-            <ElInput
+            <Input
                 type={'number'}
                 name={'repayment-time'}
                 defaultValue={String(12)}
             />
-            <ElButton variant="success">
-                <ElIcon
+            <Button variant="success">
+                <Icon
                     name={'airplay'}
                     width="1em"
                     height="1em"
                     i18n={{ ariaLabel: 'Icon airplay' }}
                 />
-                <Text>Hej</Text>
-            </ElButton>
-            <ElIcon
+                <Text>This is a long text</Text>
+            </Button>
+            <Icon
                 name={'airplay'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon airplay' }}
             />
-            <ElIcon
+            <Icon
                 name={'airplay'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon airplay' }}
             />
-            <ElIcon
+            <Icon
                 name={'airplay'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon airplay' }}
             />
-            <ElIcon
+            <Icon
                 name={'activity'}
                 width="2em"
                 height="2em"
                 cache={false}
                 i18n={{ ariaLabel: 'Icon activity' }}
             />
-            <ElIcon
+            <Icon
                 name={'anchor'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon anchor' }}
             />
-            <ElIcon
+            <Icon
                 name={'arrow-right'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon arrow-right' }}
             />
-            <ElIcon
+            <Icon
                 name={'arrow-down'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon arrow-down' }}
             />
-            <ElIcon
+            <Icon
                 name={'arrow-down'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon arrow-down' }}
             />
-        </ElForm>
+        </Form>
     )
 }
 
-export default EsRegistrationForm
+export default FormRegistration

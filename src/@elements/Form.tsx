@@ -8,7 +8,7 @@ export interface FormProps {
     [x: string]: any
 }
 
-const ElForm = (props: FormProps) => {
+const Form = (props: FormProps) => {
     const className = css`
         padding: 2rem;
         background: #f1f2f7;
@@ -21,4 +21,4 @@ const ElForm = (props: FormProps) => {
     )
 }
 
-export default ElForm
+export default Form

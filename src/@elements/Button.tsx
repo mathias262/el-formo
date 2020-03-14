@@ -6,14 +6,14 @@ import STYLES from '../utils/styles/styles'
 
 type ChildElement = string | JSX.Element | Array<JSX.Element>
 
-export interface ElButtonProps {
+export interface ButtonProps {
     variant?: 'success' | 'error'
     children?: ChildElement
     style?: string
     [key: string]: ChildElement
 }
 
-const ElButton = ({ style, variant, children, ...rest }: ElButtonProps) => {
+const Button = ({ style, variant, children, ...rest }: ButtonProps) => {
     const theme = variant => {
         switch (variant) {
             case 'success':
@@ -57,4 +57,4 @@ const ElButton = ({ style, variant, children, ...rest }: ElButtonProps) => {
     )
 }
 
-export default ElButton
+export default Button

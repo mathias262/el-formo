@@ -3,14 +3,14 @@ import { css } from 'goober'
 
 //https://html.spec.whatwg.org/multipage/input.html#the-input-element
 
-export interface ElInputProps {
+export interface InputProps {
     type: string
     name: string
     defaultValue: string
     [x: string]: any
 }
 
-const ElInput = (props: ElInputProps) => {
+const Input = (props: InputProps) => {
     let { type, placeholder = '...' } = props
 
     const typeStyle = type => {
@@ -39,4 +39,4 @@ const ElInput = (props: ElInputProps) => {
     return <input className={className} placeholder={placeholder} {...props} />
 }
 
-export default ElInput
+export default Input

@@ -2,7 +2,7 @@ import React from 'react'
 import loadable from '@loadable/component'
 
 const EsRegistrationForm = loadable(
-    () => import('../@entities/EsRegistrationForm'),
+    () => import('../@entities/FormRegistration'),
     {
         fallback: <div>Loading...</div>
     }

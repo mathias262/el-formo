@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom'
 
 // https://www.w3.org/TR/SVG11/
 
-export interface ElIconI18n {
+export interface IconI18n {
     ariaLabel: string
 }
 
-export interface ElIconProps {
+export interface IconProps {
     name: string
-    i18n: ElIconI18n
+    i18n: IconI18n
     [x: string]: any
 }
 
@@ -20,7 +20,7 @@ const getSvg = async name => {
     return svg
 }
 
-const ElIcon = ({ i18n, ...props }: ElIconProps) => {
+const Icon = ({ i18n, ...props }: IconProps) => {
     const {
         stroke = 'currentColor',
         fill = 'none',
@@ -98,4 +98,4 @@ const ElIcon = ({ i18n, ...props }: ElIconProps) => {
     )
 }
 
-export default ElIcon
+export default Icon
