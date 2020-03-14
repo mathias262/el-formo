@@ -13,13 +13,6 @@ module.exports = {
                     mangle: true
                 }
             })
-        ],
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    enforce: false
-                }
-            }
-        }
+        ]
     }
 }

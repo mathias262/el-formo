@@ -11,4 +11,4 @@
 
 ## TODO
 
--   Inconsistent bundle size, check uglify vs current optimizer TerserPlugin. Also if swc settings needs to be tweeked.
+-   Remove loadable?
