@@ -17,7 +17,7 @@ const ElText = ({ as = 'span', children, style, ...props }: ButtonProps) => {
         text-overflow: ellipsis;
         ${style}
     `
-    return React.createElement(as, { children, ...(props || []), className })
+    return React.createElement(as, { children, className, ...(props || []) })
 }
 
 export default ElText
