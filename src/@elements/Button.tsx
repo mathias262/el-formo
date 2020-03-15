@@ -1,58 +1,38 @@
 import React, { ReactNode } from 'react'
 import { css } from 'goober'
-import STYLES from '../utils/styles/styles'
+
+import { ElementProps, ChildElementProps } from '../utils/types/types'
 
 // https://html.spec.whatwg.org/#the-button-element
 
-type ChildElement = string | JSX.Element | Array<JSX.Element>
-
 export interface ButtonProps {
-    variant?: 'success' | 'error'
-    children?: ChildElement
+    children?: ChildElementProps
     style?: string
-    [key: string]: ChildElement
+    disabled?: boolean
+    [key: string]: ElementProps
 }
 
-const Button = ({ style, variant, children, ...rest }: ButtonProps) => {
-    const theme = variant => {
-        switch (variant) {
-            case 'success':
-                return `
-                color: white;
-                background: green;
-                border: solid 2px darkgreen;
-                ${STYLES.pseudo.focus({
-                    color: 'lightgreen'
-                })}
-            `
-            case 'error':
-                return `
-                color: white;
-                background: red;
-                border: solid 2px darkred;
-                ${STYLES.pseudo.focus({
-                    color: 'pink'
-                })}
-            `
-        }
-    }
-
+const Button = ({ style, children, ...props }: ButtonProps) => {
+    // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
         padding: 0.5rem;
         margin: 0;
         font-size: 1rem;
-        display: grid;
-        grid-auto-flow: column;
+        display: flex;
         justify-content: center;
         align-items: center;
-        grid-gap: 0.5rem;
         cursor: pointer;
-        ${theme(variant)}
+        &:disabled {
+            cursor: not-allowed;
+        }
+        > :not(:first-child) {
+            padding-left: 0.5rem;
+        }
         ${style}
     `
     return (
-        <button className={className} {...rest}>
-            <>{children}</>
+        <button className={className} {...props}>
+            {children}
         </button>
     )
 }
