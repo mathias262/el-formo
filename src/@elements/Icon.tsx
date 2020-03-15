@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import { css } from 'goober'
 
 // https://www.w3.org/TR/SVG11/
 
-export interface IconI18n {
+export interface IconText {
     ariaLabel: string
 }
 
 export interface IconProps {
     name: string
-    i18n: IconI18n
+    text: IconText
     [x: string]: any
 }
 
@@ -20,13 +21,8 @@ const getSvg = async name => {
     return svg
 }
 
-const Icon = ({ i18n, ...props }: IconProps) => {
+const Icon = ({ text, style, ...props }: IconProps) => {
     const {
-        stroke = 'currentColor',
-        fill = 'none',
-        strokeLinecap = 'round',
-        strokeLinejoin = 'round',
-        strokeWidth = '2',
         width = '1em',
         height = '1em',
         viewBox = '0 0 24 24',
@@ -50,27 +46,30 @@ const Icon = ({ i18n, ...props }: IconProps) => {
     const isCached = cacheRoot.querySelector(svgId)
 
     const defaultsSvgAttr = {
-        'aria-label': i18n.ariaLabel,
+        'aria-label': text.ariaLabel,
         height,
         role,
         width,
         viewBox
     }
 
-    const defaultsPathAttr = {
-        fill,
-        stroke,
-        strokeLinecap,
-        strokeLinejoin,
-        strokeWidth
-    }
+    const className = css`
+        min-width: ${width};
+        min-height: ${height};
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+        ${style}
+    `
 
     return (
         <>
             {!svg.source && <div>...</div>}
             {svg.source && cache && cacheRoot && (
                 <>
-                    <svg {...defaultsSvgAttr} {...props}>
+                    <svg className={className} {...defaultsSvgAttr} {...props}>
                         <use href={svgId} xlinkHref={svgId}></use>
                     </svg>
                     {!isCached &&
@@ -80,7 +79,6 @@ const Icon = ({ i18n, ...props }: IconProps) => {
                                     __html: svg.source
                                 }}
                                 id={svgId.slice(1, svgId.length)}
-                                {...defaultsPathAttr}
                             ></g>,
                             cacheRoot
                         )}
@@ -88,9 +86,9 @@ const Icon = ({ i18n, ...props }: IconProps) => {
             )}
             {svg.source && !cache && (
                 <svg
+                    className={className}
                     dangerouslySetInnerHTML={{ __html: svg.source }}
                     {...defaultsSvgAttr}
-                    {...defaultsPathAttr}
                     {...props}
                 ></svg>
             )}
