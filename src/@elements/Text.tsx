@@ -1,13 +1,13 @@
 import React from 'react'
 import { css } from 'goober'
 
-type ChildElement = string | JSX.Element | Array<JSX.Element>
+import { ChildElementProps, ElementProps } from '../utils/types/types'
 
 export interface ButtonProps {
     as?: string
-    children?: ChildElement
+    children?: ChildElementProps
     style?: string
-    [key: string]: ChildElement
+    [key: string]: ElementProps
 }
 
 const ElText = ({ as = 'span', children, style, ...props }: ButtonProps) => {

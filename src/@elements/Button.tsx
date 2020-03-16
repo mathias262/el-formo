@@ -8,11 +8,12 @@ import { ElementProps, ChildElementProps } from '../utils/types/types'
 export interface ButtonProps {
     children?: ChildElementProps
     style?: string
-    disabled?: boolean
+    type?: 'button' | 'submit' | 'reset'
     [key: string]: ElementProps
 }
 
 const Button = ({ style, children, ...props }: ButtonProps) => {
+    const { type = 'submit' } = props
     // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
         padding: 0.5rem;
@@ -31,7 +32,7 @@ const Button = ({ style, children, ...props }: ButtonProps) => {
         ${style}
     `
     return (
-        <button className={className} {...props}>
+        <button className={className} type={type} {...props}>
             {children}
         </button>
     )

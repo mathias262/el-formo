@@ -14,20 +14,30 @@ const Input = ({ style, ...props }: InputProps) => {
     let { type, placeholder = '...' } = props
 
     const typeStyle = type => {
+        let style = ''
         switch (type) {
+            case 'password':
+            case 'email':
             case 'number':
             case 'text':
-                return `
-                border: solid 3px gray;
-                padding: 0.25rem 0.5rem;
-                -moz-appearance:textfield; 
-                &::-webkit-inner-spin-button,
-                &::-webkit-outer-spin-button { 
-                    -webkit-appearance: none; 
-                    margin: 0; 
-                }
+                style += `
+                    border: solid 3px gray;
+                    padding: 0.25rem 0.5rem;
+                    &:invalid {
+                        border-color: red;
+                    }            
+                `
+            case 'number':
+                style += `
+                    -moz-appearance:textfield; 
+                    &::-webkit-inner-spin-button,
+                    &::-webkit-outer-spin-button { 
+                        -webkit-appearance: none; 
+                        margin: 0; 
+                    }
                 `
         }
+        return style
     }
 
     const className = css`
@@ -35,9 +45,6 @@ const Input = ({ style, ...props }: InputProps) => {
         width: 100%;
         display: block;
         ${typeStyle(type)}
-        &:invalid {
-            border: solid 1px red;
-        }
         ${style}
     `
 
