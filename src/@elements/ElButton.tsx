@@ -1,15 +1,12 @@
 import React, { ReactNode } from 'react'
 import { css } from 'goober'
 
-import { ElementProps, ChildElementProps } from '../utils/types/types'
-
 // https://html.spec.whatwg.org/#the-button-element
 
 export interface ElButtonProps {
-    children?: ChildElementProps
     style?: string
     type?: 'button' | 'submit' | 'reset'
-    [key: string]: ElementProps
+    [key: string]: any
 }
 
 export const ElButton = ({ style, children, ...props }: ElButtonProps) => {

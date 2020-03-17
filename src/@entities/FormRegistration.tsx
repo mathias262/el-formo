@@ -20,7 +20,7 @@ const FormRegistration = props => {
         <ElForm
             className={formClass}
             onSubmit={() => console.log}
-            aria-label="Form name"
+            ariaLabel={'Form name'}
         >
             <ElInput
                 name="number"

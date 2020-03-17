@@ -1,26 +1,29 @@
 import React from 'react'
 import { css } from 'goober'
 
-import { ChildElementProps, ElementProps } from '../utils/types/types'
+import { ChildElementProps } from '../utils/types/types'
 
 export interface ElTextProps {
-    as?: string
     children?: ChildElementProps
     style?: string
-    [key: string]: ElementProps
+    tag?: string
+    displayTag?: string
+    [key: string]: any
 }
 
 export const ElText = ({
-    as = 'span',
+    tag = 'p',
+    displayTag = 'p',
     children,
     style,
     ...props
 }: ElTextProps) => {
     const className = css`
+        margin: 0;
         white-space: normal;
         overflow: hidden;
         text-overflow: ellipsis;
         ${style}
     `
-    return React.createElement(as, { children, className, ...(props || []) })
+    return React.createElement(tag, { children, className, ...(props || []) })
 }
