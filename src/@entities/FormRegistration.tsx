@@ -1,11 +1,11 @@
 import React from 'react'
 import { css } from 'goober'
 
-import Input from '../@elements/Input'
-import Button from '../@elements/Button'
-import Form from '../@elements/Form'
-import Icon from '../@elements/Icon'
-import Text from '../@elements/Text'
+import { ElInput } from '../@elements/ElInput'
+import { ElButton } from '../@elements/ElButton'
+import { ElForm } from '../@elements/ElForm'
+import { ElIcon } from '../@elements/ElIcon'
+import { ElText } from '../@elements/ElText'
 
 const FormRegistration = props => {
     const formClass = css`
@@ -17,8 +17,12 @@ const FormRegistration = props => {
     `
 
     return (
-        <Form className={formClass} onSubmit={() => console.log}>
-            <Input
+        <ElForm
+            className={formClass}
+            onSubmit={() => console.log}
+            aria-label="Form name"
+        >
+            <ElInput
                 name="number"
                 type="number"
                 step="1000"
@@ -26,56 +30,56 @@ const FormRegistration = props => {
                 max="600000"
                 defaultValue="310000"
             />
-            <Input
+            <ElInput
                 name="text"
                 type="text"
                 defaultValue="hello world"
                 pattern="hello world"
             />
-            <Input
+            <ElInput
                 name="email"
                 type="email"
                 defaultValue=""
                 pattern="hello world"
             />
-            <Button>
-                <Icon
+            <ElButton>
+                <ElIcon
                     name={'airplay'}
                     width="1em"
                     height="1em"
                     text={{ ariaLabel: 'Icon airplay' }}
                 />
-                <Text>This is a long text</Text>
-            </Button>
-            <Button disabled={true}>
-                <Icon
+                <ElText>This is a long text</ElText>
+            </ElButton>
+            <ElButton disabled={true}>
+                <ElText>This is a long text</ElText>
+                <ElIcon
                     name={'airplay'}
                     width="1em"
                     height="1em"
                     text={{ ariaLabel: 'Icon airplay' }}
                 />
-                <Text>This is a long text</Text>
-            </Button>
-            <Icon
+            </ElButton>
+            <ElIcon
                 name={'activity'}
                 width="2em"
                 height="2em"
                 cache={false}
                 text={{ ariaLabel: 'Icon activity' }}
             />
-            <Icon
+            <ElIcon
                 name={'anchor'}
                 width="2em"
                 height="2em"
                 text={{ ariaLabel: 'Icon anchor' }}
             />
-            <Icon
+            <ElIcon
                 name={'arrow-down'}
                 width="2em"
                 height="2em"
                 text={{ ariaLabel: 'Icon arrow-down' }}
             />
-        </Form>
+        </ElForm>
     )
 }
 

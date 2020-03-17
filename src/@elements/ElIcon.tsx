@@ -4,13 +4,13 @@ import { css } from 'goober'
 
 // https://www.w3.org/TR/SVG11/
 
-export interface IconText {
+export interface ElIconText {
     ariaLabel: string
 }
 
-export interface IconProps {
+export interface ElIconProps {
     name: string
-    text: IconText
+    text: ElIconText
     [x: string]: any
 }
 
@@ -19,7 +19,7 @@ const getSvg = async name => {
     return svg
 }
 
-const Icon = ({ text, style, ...props }: IconProps) => {
+export const ElIcon = ({ text, style, ...props }: ElIconProps) => {
     const {
         width = '1em',
         height = '1em',
@@ -59,6 +59,7 @@ const Icon = ({ text, style, ...props }: IconProps) => {
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-width: 2;
+        user-select: none;
         ${style}
     `
 
@@ -93,5 +94,3 @@ const Icon = ({ text, style, ...props }: IconProps) => {
         </>
     )
 }
-
-export default Icon

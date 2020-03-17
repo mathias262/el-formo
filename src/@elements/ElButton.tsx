@@ -5,14 +5,14 @@ import { ElementProps, ChildElementProps } from '../utils/types/types'
 
 // https://html.spec.whatwg.org/#the-button-element
 
-export interface ButtonProps {
+export interface ElButtonProps {
     children?: ChildElementProps
     style?: string
     type?: 'button' | 'submit' | 'reset'
     [key: string]: ElementProps
 }
 
-const Button = ({ style, children, ...props }: ButtonProps) => {
+export const ElButton = ({ style, children, ...props }: ElButtonProps) => {
     const { type = 'submit' } = props
     // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
@@ -27,7 +27,7 @@ const Button = ({ style, children, ...props }: ButtonProps) => {
             cursor: not-allowed;
         }
         > :not(:first-child) {
-            padding-left: 0.5rem;
+            margin-left: 0.5rem;
         }
         ${style}
     `
@@ -37,5 +37,3 @@ const Button = ({ style, children, ...props }: ButtonProps) => {
         </button>
     )
 }
-
-export default Button

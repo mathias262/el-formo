@@ -3,14 +3,19 @@ import { css } from 'goober'
 
 import { ChildElementProps, ElementProps } from '../utils/types/types'
 
-export interface ButtonProps {
+export interface ElTextProps {
     as?: string
     children?: ChildElementProps
     style?: string
     [key: string]: ElementProps
 }
 
-const ElText = ({ as = 'span', children, style, ...props }: ButtonProps) => {
+export const ElText = ({
+    as = 'span',
+    children,
+    style,
+    ...props
+}: ElTextProps) => {
     const className = css`
         white-space: normal;
         overflow: hidden;
@@ -19,5 +24,3 @@ const ElText = ({ as = 'span', children, style, ...props }: ButtonProps) => {
     `
     return React.createElement(as, { children, className, ...(props || []) })
 }
-
-export default ElText
