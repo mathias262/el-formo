@@ -9,13 +9,12 @@
         "development": "webpack-dev-server --config ./webpack/development.config.js",
         "production": "webpack-dev-server --config ./webpack/production.config.js",
         "build": "webpack --config ./webpack/production.config.js",
-        "analyze:development": "./scripts/stats.fish development",
-        "analyze:production": "./scripts/stats.fish production"
+        "analyze:development": "scripts/stats.fish development",
+        "analyze:production": "scripts/stats.fish production"
     },
     "author": "Mathias Iversen <work@mathiasiversen.com>",
     "license": "MIT",
     "devDependencies": {
-        "@svgr/webpack": "^5.2.0",
         "@swc/core": "^1.1.25",
         "@types/react": "^16.9.21",
         "goober": "^1.7.1",
@@ -31,7 +30,6 @@
         "webpack-dev-server": "^3.10.3"
     },
     "dependencies": {
-        "@loadable/component": "^5.12.0",
         "preact": "^10.3.2",
         "@advisa/icons": "file:../icon-builder-example/pkg"
     }

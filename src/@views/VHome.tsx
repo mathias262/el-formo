@@ -1,12 +1,5 @@
 import React from 'react'
-import loadable from '@loadable/component'
-
-const EsRegistrationForm = loadable(
-    () => import('../@entities/FormRegistration'),
-    {
-        fallback: <div>Loading...</div>
-    }
-)
+import EsRegistrationForm from '../@entities/FormRegistration'
 
 const PaHome = props => {
     return (

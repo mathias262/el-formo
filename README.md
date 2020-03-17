@@ -10,5 +10,3 @@
 ## Description
 
 ## TODO
-
--   Remove loadable?
