@@ -15,9 +15,7 @@ export interface IconProps {
 }
 
 const getSvg = async name => {
-    const { default: svg } = await import(
-        `../../../icon-builder-example/build/module-icons/${name}.js`
-    )
+    const { default: svg } = await import(`@advisa/icons/src/${name}.js`)
     return svg
 }
 
