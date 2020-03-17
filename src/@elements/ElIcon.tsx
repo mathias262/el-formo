@@ -58,7 +58,7 @@ export const ElIcon = ({ text, style, ...props }: ElIconProps) => {
         stroke: currentColor;
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke-width: 2;
+        stroke-width: var(--stroke-width-2);
         user-select: none;
         ${style}
     `

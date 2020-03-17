@@ -21,10 +21,10 @@ export const ElInput = ({ style, ...props }: ElInputProps) => {
             case 'number':
             case 'text':
                 style += `
-                    border: solid 3px gray;
-                    padding: 0.25rem 0.5rem;
+                    border: solid var(--border-width-4) var(--color-gray-400);
+                    padding: var(--spacing-2);
                     &:invalid {
-                        border-color: red;
+                        border-color: var(--color-red-400);
                     }            
                 `
             case 'number':
@@ -41,7 +41,7 @@ export const ElInput = ({ style, ...props }: ElInputProps) => {
     }
 
     const className = css`
-        font-size: 1rem;
+        font-size: var(--font-size-base);
         width: 100%;
         display: block;
         ${typeStyle(type)}

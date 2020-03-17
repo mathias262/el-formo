@@ -13,9 +13,10 @@ export const ElButton = ({ style, children, ...props }: ElButtonProps) => {
     const { type = 'submit' } = props
     // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
-        padding: 0.5rem;
-        margin: 0;
-        font-size: 1rem;
+        border: solid var(--border-width-4) var(--color-gray-400);
+        padding: var(--spacing-2);
+        margin: var(--spacing-0);
+        font-size: var(--font-size-base);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -24,7 +25,7 @@ export const ElButton = ({ style, children, ...props }: ElButtonProps) => {
             cursor: not-allowed;
         }
         > :not(:first-child) {
-            margin-left: 0.5rem;
+            margin-left: var(--spacing-2);
         }
         ${style}
     `

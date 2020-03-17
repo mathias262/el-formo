@@ -8,17 +8,8 @@ import { ElIcon } from '../@elements/ElIcon'
 import { ElText } from '../@elements/ElText'
 
 const FormRegistration = props => {
-    const formClass = css`
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap: 1rem;
-        padding: 1rem;
-        background: lightgray;
-    `
-
     return (
         <ElForm
-            className={formClass}
             onSubmit={() => console.log}
             ariaLabel={'Form name'}
         >

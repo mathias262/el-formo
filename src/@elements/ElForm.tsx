@@ -14,8 +14,11 @@ export interface ElFormProps {
 
 export const ElForm = ({ ariaLabel, ...props }: ElFormProps) => {
     const className = css`
-        padding: 2rem;
-        background: #f1f2f7;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: var(--spacing-8);
+        padding: var(--spacing-8);
+        background: var(--color-gray-100);
         ${props.style}
     `
     return (
