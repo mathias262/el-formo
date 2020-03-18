@@ -10,8 +10,12 @@ import RHome from './@routes/RHome'
 setPragma(React.createElement)
 
 glob`
+    :root {
+        ${generateCssVariables(CSS)}
+    }
     html {
         font-size: 100%;
+        font-family: var(--font-family-sans);
     }
     body {
         margin: 0;
@@ -19,8 +23,15 @@ glob`
     * {
         box-sizing: border-box;
     }
-    :root {
-        ${generateCssVariables(CSS)}
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
     }
 `
 

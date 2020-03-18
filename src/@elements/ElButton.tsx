@@ -30,6 +30,7 @@ export const ElButton = ({ style, children, ...props }: ElButtonProps) => {
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        font-family: inherit
         &:disabled {
             cursor: not-allowed;
         }

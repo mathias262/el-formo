@@ -183,11 +183,31 @@ export default {
         none: 'none'
     },
     fontFamily: {
-        sans:
-            'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-        serif: 'Georgia, Cambria, "Times New Roman", Times, serif',
-        mono:
-            'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+        sans: [
+            'DejaVu Sans',
+            'system-ui',
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            '"Noto Sans"',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+            '"Noto Color Emoji"'
+        ],
+        serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+        mono: [
+            'Menlo',
+            'Monaco',
+            'Consolas',
+            '"Liberation Mono"',
+            '"Courier New"',
+            'monospace'
+        ]
     },
     fontSize: {
         xs: '0.75rem',
