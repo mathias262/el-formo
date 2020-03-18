@@ -12,8 +12,8 @@ export interface ElTextProps {
 }
 
 export const ElText = ({
-    tag = 'p',
-    displayTag = 'p',
+    tag = 'span',
+    displayTag = 'span',
     children,
     style,
     ...props

@@ -21,7 +21,8 @@ export const ElInput = ({ style, ...props }: ElInputProps) => {
             case 'number':
             case 'text':
                 style += `
-                    border: solid var(--border-width-4) var(--color-gray-400);
+                    border: solid var(--border-width-2) var(--color-gray-400);
+                    border-radius: var(--border-radius-default);
                     padding: var(--spacing-2);
                     &:invalid {
                         border-color: var(--color-red-400);

@@ -1,5 +1,4 @@
 import React from 'react'
-import { css } from 'goober'
 
 import { ElInput } from '../@elements/ElInput'
 import { ElButton } from '../@elements/ElButton'
@@ -9,10 +8,7 @@ import { ElText } from '../@elements/ElText'
 
 const FormRegistration = props => {
     return (
-        <ElForm
-            onSubmit={() => console.log}
-            ariaLabel={'Form name'}
-        >
+        <ElForm onSubmit={() => console.log} ariaLabel={'Form name'}>
             <ElInput
                 name="number"
                 type="number"
@@ -40,7 +36,18 @@ const FormRegistration = props => {
                     height="1em"
                     text={{ ariaLabel: 'Icon airplay' }}
                 />
-                <ElText>This is a long text</ElText>
+                <ElText style={'white-space: nowrap;'}>
+                    This is a very long and unnecessary text
+                </ElText>
+            </ElButton>
+            <ElButton>
+                <ElIcon
+                    name={'airplay'}
+                    width="1em"
+                    height="1em"
+                    text={{ ariaLabel: 'Icon airplay' }}
+                />
+                <ElText>This is a very long and unnecessary text</ElText>
             </ElButton>
             <ElButton disabled={true}>
                 <ElText>This is a long text</ElText>

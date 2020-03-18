@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { setPragma, glob } from 'goober'
 
 import CSS from './@constants/css'
-import { genCssVariables } from './utils/functions/transform-css-const-to-strings'
+import { generateCssVariables } from './utils/ts/generate-css-variables'
 
 import RHome from './@routes/RHome'
 
@@ -11,7 +11,7 @@ setPragma(React.createElement)
 
 glob`
     html {
-        font-size: 20px;
+        font-size: 100%;
     }
     body {
         margin: 0;
@@ -20,7 +20,7 @@ glob`
         box-sizing: border-box;
     }
     :root {
-        ${genCssVariables(CSS).join('\n')}
+        ${generateCssVariables(CSS)}
     }
 `
 

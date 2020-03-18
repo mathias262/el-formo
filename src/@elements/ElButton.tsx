@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react'
 import { css } from 'goober'
 
+import { shouldTextBeDark } from '../utils/ts/should-text-be-dark'
+
 // https://html.spec.whatwg.org/#the-button-element
 
 export interface ElButtonProps {
@@ -13,7 +15,14 @@ export const ElButton = ({ style, children, ...props }: ElButtonProps) => {
     const { type = 'submit' } = props
     // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
-        border: solid var(--border-width-4) var(--color-gray-400);
+        border: solid var(--border-width-default) var(--theme-color-brand);
+        background-color: var(--theme-color-brand);
+        color: ${
+            shouldTextBeDark('var(--theme-color-brand)')
+                ? 'var(--theme-color-text-black);'
+                : 'var(--theme-color-text-white);'
+        }
+        border-radius: var(--border-radius-default);
         padding: var(--spacing-2);
         margin: var(--spacing-0);
         font-size: var(--font-size-base);
