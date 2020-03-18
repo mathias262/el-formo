@@ -1,4 +1,4 @@
-import CSS from '../../@constants/css'
+import CSS from '../../constants/css'
 
 export const getValueFromCssVar = (variable: String) => {
     let arr = variable

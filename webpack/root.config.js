@@ -68,7 +68,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'El formo',
-            template: path.resolve(__dirname, '../src/html/index.html')
+            template: path.resolve(__dirname, '../src/index.html')
         })
     ]
 }

@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { setPragma, glob } from 'goober'
 
-import CSS from './@constants/css'
+import CSS from './constants/css'
 import { generateCssVariables } from './utils/ts/generate-css-variables'
 
-import RHome from './@routes/RHome'
+import RHome from './routes/RHome'
 
 setPragma(React.createElement)
 

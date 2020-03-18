@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { ElInput } from '../@elements/ElInput'
-import { ElButton } from '../@elements/ElButton'
-import { ElForm } from '../@elements/ElForm'
-import { ElIcon } from '../@elements/ElIcon'
-import { ElText } from '../@elements/ElText'
+import { ElInput } from '../elements/ElInput'
+import { ElButton } from '../elements/ElButton'
+import { ElForm } from '../elements/ElForm'
+import { ElIcon } from '../elements/ElIcon'
+import { ElText } from '../elements/ElText'
 
 const FormRegistration = props => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import EsRegistrationForm from '../@entities/FormRegistration'
+import EsRegistrationForm from '../entities/FormRegistration'
 
 const PaHome = props => {
     return (
