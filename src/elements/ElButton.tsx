@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { css } from 'goober'
 
 import { shouldTextBeDark } from '../utils/ts/should-text-be-dark'
@@ -15,22 +15,22 @@ export const ElButton = ({ style, children, ...props }: ElButtonProps) => {
     const { type = 'submit' } = props
     // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
-        border: solid var(--border-width-default) var(--theme-color-brand);
+        align-items: center;
         background-color: var(--theme-color-brand);
+        border-radius: var(--border-radius-default);
+        border: solid var(--border-width-default) var(--theme-color-brand);
         color: ${
             shouldTextBeDark('var(--theme-color-brand)')
                 ? 'var(--theme-color-text-black);'
                 : 'var(--theme-color-text-white);'
         }
-        border-radius: var(--border-radius-default);
-        padding: var(--spacing-2);
-        margin: var(--spacing-0);
-        font-size: var(--font-size-base);
-        display: flex;
-        justify-content: center;
-        align-items: center;
         cursor: pointer;
+        display: flex;
         font-family: inherit
+        font-size: var(--font-size-base);
+        justify-content: center;
+        margin: var(--spacing-0);
+        padding: var(--spacing-2);
         &:disabled {
             cursor: not-allowed;
         }
