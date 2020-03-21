@@ -1,16 +1,17 @@
 import { SVGProps } from 'react'
 
-export type ElIndexType = string | boolean | Function | Array<any> | Object
-export type ElChildren =
+export type ElementIndexType = string | boolean | Function | Array<any> | Object
+export type ElementChildren =
     | string
     | JSX.Element
     | Array<JSX.Element>
     | SVGProps<SVGSVGElement>
 
-export interface ElInterface {
-    [key: string]: ElIndexType
-    ariaLabel?: string
-    children?: ElChildren
+export interface ElementInterface {
+    [key: string]: ElementIndexType
+    id?: string
+    className?: string
+    children?: ElementChildren
     style?: string
     i18n?: {
         [key: string]: string

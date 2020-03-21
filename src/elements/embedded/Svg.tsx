@@ -4,9 +4,9 @@ import { css } from 'goober'
 
 // https://www.w3.org/TR/SVG11/
 
-import { ElInterface } from '../utils/types/types'
+import { ElementInterface } from '../../utils/types/types'
 
-export interface ElSvgProps extends ElInterface {
+export interface ElementProps extends ElementInterface {
     cache?: boolean
     cacheRoot?: HTMLElement
     height?: string
@@ -20,7 +20,7 @@ const getSvg = async name => {
     return svg
 }
 
-export const ElSvg = ({ i18n, style, ...props }: ElSvgProps) => {
+export default ({ i18n, style, ...props }: ElementProps) => {
     const {
         width = '1em',
         height = '1em',

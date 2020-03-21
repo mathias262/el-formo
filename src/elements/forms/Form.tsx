@@ -3,15 +3,15 @@ import { css } from 'goober'
 
 // https://html.spec.whatwg.org/multipage/#the-form-element
 
-import { ElInterface } from '../utils/types/types'
+import { ElementInterface } from '../../utils/types/types'
 
-export interface ElFormProps extends ElInterface {
+export interface ElementProps extends ElementInterface {
     name: string
     onSubmit: (e: FormEvent) => any
     target?: string
 }
 
-export const ElForm = ({ name, style, ...props }: ElFormProps) => {
+export default ({ name, style, ...props }: ElementProps) => {
     const className = css`
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

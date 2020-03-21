@@ -1,15 +1,17 @@
 import React from 'react'
 
-import { ElInput } from '../elements/ElInput'
-import { ElButton } from '../elements/ElButton'
-import { ElForm } from '../elements/ElForm'
-import { ElSvg } from '../elements/ElSvg'
-import { ElText } from '../elements/ElText'
+import Input from '../elements/forms/Input'
+import Button from '../elements/forms/Button'
+import Form from '../elements/forms/Form'
+import Svg from '../elements/embedded/Svg'
+import P from '../elements/grouping-content/P'
+import Span from '../elements/text-level-semantics/Span'
+import { H1 } from '../elements/sections/H'
 
 const FormRegistration = () => {
     return (
-        <ElForm onSubmit={e => console.log} name="Form name">
-            <ElInput
+        <Form onSubmit={e => console.log} name="Form name">
+            <Input
                 name="number"
                 type="number"
                 step="1000"
@@ -17,67 +19,72 @@ const FormRegistration = () => {
                 max="600000"
                 defaultValue="310000"
             />
-            <ElInput
+            <Input
                 name="text"
                 type="text"
                 defaultValue="hello world"
                 pattern="hello world"
             />
-            <ElInput
+            <Input
                 name="email"
                 type="email"
                 defaultValue=""
                 pattern="hello world"
             />
-            <ElButton type="button">
-                <ElSvg
+            <Button type="button" onclick={e => console.log(e)}>
+                <Svg
                     name={'airplay'}
                     width="1em"
                     height="1em"
                     i18n={{ ariaLabel: 'Icon airplay' }}
                 />
-                <ElText style={'white-space: nowrap;'}>
+                <Span style={'white-space: nowrap;'}>
                     This is a very long and unnecessary text
-                </ElText>
-            </ElButton>
-            <ElButton type="button">
-                <ElSvg
+                </Span>
+            </Button>
+            <Button type="button" onclick={e => console.log(e)}>
+                <Svg
                     name={'airplay'}
                     width="1em"
                     height="1em"
                     i18n={{ ariaLabel: 'Icon airplay' }}
                 />
-                <ElText>This is a very long and unnecessary text</ElText>
-            </ElButton>
-            <ElButton type="button" disabled={true}>
-                <ElText>This is a long text</ElText>
-                <ElSvg
+                <Span>This is a very long and unnecessary text</Span>
+            </Button>
+            <Button type="button" disabled={true} onclick={e => console.log(e)}>
+                <Span>This is a long text</Span>
+                <Svg
                     name={'airplay'}
                     width="1em"
                     height="1em"
                     i18n={{ ariaLabel: 'Icon airplay' }}
                 />
-            </ElButton>
-            <ElSvg
+            </Button>
+            <Svg
                 name={'activity'}
                 width="2em"
                 height="2em"
                 cache={false}
                 i18n={{ ariaLabel: 'Icon activity' }}
             />
-            <ElSvg
+            <Svg
                 name={'anchor'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon anchor' }}
             />
-            <ElSvg
+            <Svg
                 name={'arrow-down'}
                 width="2em"
                 height="2em"
                 i18n={{ ariaLabel: 'Icon arrow-down' }}
             />
-        </ElForm>
+            <P>Random text yao!</P>
+            <H1>Hejsan svejsan</H1>
+            <Button type="button" onclick={e => console.log(e)}>
+                what
+            </Button>
+        </Form>
     )
 }
 

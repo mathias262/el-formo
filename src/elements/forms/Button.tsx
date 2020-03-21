@@ -1,23 +1,19 @@
 import React from 'react'
 import { css } from 'goober'
 
-import { shouldTextBeDark } from '../utils/ts/should-text-be-dark'
-import * as STYLES from '../utils/styles/styles'
+import { shouldTextBeDark } from '../../utils/ts/should-text-be-dark'
+import * as STYLES from '../../utils/styles/styles'
 
 // https://html.spec.whatwg.org/#the-button-element
 
-import { ElInterface } from '../utils/types/types'
+import { ElementInterface } from '../../utils/types/types'
 
-export interface ElButtonProps extends ElInterface {
+export interface ElementProps extends ElementInterface {
     type: 'button' | 'submit' | 'reset'
+    onclick: (e: MouseEvent) => any
 }
 
-export const ElButton = ({
-    style,
-    children,
-    type,
-    ...props
-}: ElButtonProps) => {
+export default ({ style, children, type, ...props }: ElementProps) => {
     // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
         align-items: center;
