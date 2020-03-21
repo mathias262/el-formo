@@ -8,7 +8,7 @@ export interface ElementProps extends ElementInterface {
     displayTag?: string
 }
 
-export const P = ({ children, style, ...props }: ElementProps) => {
+export default ({ children, style, ...props }: ElementProps) => {
     const className = css`
         margin: 0;
         white-space: normal;

@@ -4,8 +4,8 @@ import Input from '../elements/forms/Input'
 import Button from '../elements/forms/Button'
 import Form from '../elements/forms/Form'
 import Svg from '../elements/embedded/Svg'
-import { P } from '../elements/text/Paragraph'
-import { Span } from '../elements/text/Semantics'
+import P from '../elements/text/Paragraph'
+import { Span } from '../elements/text/TextSemantics'
 import { H1 } from '../elements/text/Heading'
 
 const FormRegistration = () => {
