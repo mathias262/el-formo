@@ -9,7 +9,7 @@ export interface ElementProps extends ElementInterface {
     level: HeadingLevels
 }
 
-const HeadingBase = ({ level, children, style, ...props }: ElementProps) => {
+const Base = ({ level, children, style, ...props }: ElementProps) => {
     const className = css`
         margin: 0;
         white-space: normal;
@@ -26,36 +26,36 @@ const HeadingBase = ({ level, children, style, ...props }: ElementProps) => {
 
 export const H1 = ({ children, ...props }: ElementInterface) => {
     return (
-        <HeadingBase level="1" {...props}>
+        <Base level="1" {...props}>
             {children}
-        </HeadingBase>
+        </Base>
     )
 }
 export const H2 = ({ children, ...props }: ElementInterface) => {
     return (
-        <HeadingBase level="2" {...props}>
+        <Base level="2" {...props}>
             {children}
-        </HeadingBase>
+        </Base>
     )
 }
 export const H3 = ({ children, ...props }: ElementInterface) => {
     return (
-        <HeadingBase level="3" {...props}>
+        <Base level="3" {...props}>
             {children}
-        </HeadingBase>
+        </Base>
     )
 }
 export const H4 = ({ children, ...props }: ElementInterface) => {
     return (
-        <HeadingBase level="4" {...props}>
+        <Base level="4" {...props}>
             {children}
-        </HeadingBase>
+        </Base>
     )
 }
 export const H5 = ({ children, ...props }: ElementInterface) => {
     return (
-        <HeadingBase level="5" {...props}>
+        <Base level="5" {...props}>
             {children}
-        </HeadingBase>
+        </Base>
     )
 }

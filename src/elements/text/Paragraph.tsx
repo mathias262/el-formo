@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { ReactComponentElement } from 'react'
 import { css } from 'goober'
 
 import { ElementInterface } from '../../utils/types/types'
 
-export interface ElementProps extends ElementInterface {}
+export interface ElementProps extends ElementInterface {
+    tag?: string
+    displayTag?: string
+}
 
-export default ({ children, style, ...props }: ElementProps) => {
+export const P = ({ children, style, ...props }: ElementProps) => {
     const className = css`
         margin: 0;
         white-space: normal;
@@ -14,8 +17,8 @@ export default ({ children, style, ...props }: ElementProps) => {
         ${style}
     `
     return (
-        <span className={className} {...props}>
+        <p className={className} {...props}>
             {children}
-        </span>
+        </p>
     )
 }
