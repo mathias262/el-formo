@@ -9,11 +9,16 @@ import * as STYLES from '../../utils/styles/styles'
 import { ElementInterface } from '../../utils/types/types'
 
 export interface ElementProps extends ElementInterface {
-    type: 'button' | 'submit' | 'reset'
+    type?: 'button' | 'submit' | 'reset'
     onclick: (e: MouseEvent) => any
 }
 
-export default ({ style, children, type, ...props }: ElementProps) => {
+export default ({
+    style,
+    children,
+    type = 'button',
+    ...props
+}: ElementProps) => {
     // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
         align-items: center;
