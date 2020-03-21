@@ -3,11 +3,15 @@ import { css } from 'goober'
 
 //https://html.spec.whatwg.org/multipage/input.html#the-input-element
 
-export interface ElInputProps {
-    type: string
+import { ElInterface } from '../utils/types/types'
+
+export type ElInputTypes = 'text' | 'number' | 'email' | 'password'
+
+export interface ElInputProps extends ElInterface {
+    type: ElInputTypes
     name: string
-    defaultValue: string
-    [x: string]: any
+    placeholder?: string
+    defaultValue?: string
 }
 
 export const ElInput = ({ style, ...props }: ElInputProps) => {

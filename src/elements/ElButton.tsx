@@ -6,14 +6,18 @@ import * as STYLES from '../utils/styles/styles'
 
 // https://html.spec.whatwg.org/#the-button-element
 
-export interface ElButtonProps {
-    style?: string
-    type?: 'button' | 'submit' | 'reset'
-    [key: string]: any
+import { ElInterface } from '../utils/types/types'
+
+export interface ElButtonProps extends ElInterface {
+    type: 'button' | 'submit' | 'reset'
 }
 
-export const ElButton = ({ style, children, ...props }: ElButtonProps) => {
-    const { type = 'submit' } = props
+export const ElButton = ({
+    style,
+    children,
+    type,
+    ...props
+}: ElButtonProps) => {
     // FIXME: Grid doesn work on buttons in chrome...
     const className = css`
         align-items: center;

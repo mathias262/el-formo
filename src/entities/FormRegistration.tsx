@@ -3,12 +3,12 @@ import React from 'react'
 import { ElInput } from '../elements/ElInput'
 import { ElButton } from '../elements/ElButton'
 import { ElForm } from '../elements/ElForm'
-import { ElIcon } from '../elements/ElIcon'
+import { ElSvg } from '../elements/ElSvg'
 import { ElText } from '../elements/ElText'
 
-const FormRegistration = props => {
+const FormRegistration = () => {
     return (
-        <ElForm onSubmit={() => console.log} ariaLabel={'Form name'}>
+        <ElForm onSubmit={e => console.log} name="Form name">
             <ElInput
                 name="number"
                 type="number"
@@ -29,53 +29,53 @@ const FormRegistration = props => {
                 defaultValue=""
                 pattern="hello world"
             />
-            <ElButton>
-                <ElIcon
+            <ElButton type="button">
+                <ElSvg
                     name={'airplay'}
                     width="1em"
                     height="1em"
-                    text={{ ariaLabel: 'Icon airplay' }}
+                    i18n={{ ariaLabel: 'Icon airplay' }}
                 />
                 <ElText style={'white-space: nowrap;'}>
                     This is a very long and unnecessary text
                 </ElText>
             </ElButton>
-            <ElButton>
-                <ElIcon
+            <ElButton type="button">
+                <ElSvg
                     name={'airplay'}
                     width="1em"
                     height="1em"
-                    text={{ ariaLabel: 'Icon airplay' }}
+                    i18n={{ ariaLabel: 'Icon airplay' }}
                 />
                 <ElText>This is a very long and unnecessary text</ElText>
             </ElButton>
-            <ElButton disabled={true}>
+            <ElButton type="button" disabled={true}>
                 <ElText>This is a long text</ElText>
-                <ElIcon
+                <ElSvg
                     name={'airplay'}
                     width="1em"
                     height="1em"
-                    text={{ ariaLabel: 'Icon airplay' }}
+                    i18n={{ ariaLabel: 'Icon airplay' }}
                 />
             </ElButton>
-            <ElIcon
+            <ElSvg
                 name={'activity'}
                 width="2em"
                 height="2em"
                 cache={false}
-                text={{ ariaLabel: 'Icon activity' }}
+                i18n={{ ariaLabel: 'Icon activity' }}
             />
-            <ElIcon
+            <ElSvg
                 name={'anchor'}
                 width="2em"
                 height="2em"
-                text={{ ariaLabel: 'Icon anchor' }}
+                i18n={{ ariaLabel: 'Icon anchor' }}
             />
-            <ElIcon
+            <ElSvg
                 name={'arrow-down'}
                 width="2em"
                 height="2em"
-                text={{ ariaLabel: 'Icon arrow-down' }}
+                i18n={{ ariaLabel: 'Icon arrow-down' }}
             />
         </ElForm>
     )

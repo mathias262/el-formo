@@ -1,14 +1,11 @@
-import React from 'react'
+import React, { ReactComponentElement } from 'react'
 import { css } from 'goober'
 
-import { ChildElementProps } from '../utils/types/types'
+import { ElInterface } from '../utils/types/types'
 
-export interface ElTextProps {
-    children?: ChildElementProps
-    style?: string
+export interface ElTextProps extends ElInterface {
     tag?: string
     displayTag?: string
-    [key: string]: any
 }
 
 export const ElText = ({

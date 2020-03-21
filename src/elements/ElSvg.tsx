@@ -4,14 +4,15 @@ import { css } from 'goober'
 
 // https://www.w3.org/TR/SVG11/
 
-export interface ElIconText {
-    ariaLabel: string
-}
+import { ElInterface } from '../utils/types/types'
 
-export interface ElIconProps {
+export interface ElSvgProps extends ElInterface {
+    cache?: boolean
+    cacheRoot?: HTMLElement
+    height?: string
     name: string
-    text: ElIconText
-    [x: string]: any
+    viewBox?: string
+    width?: string
 }
 
 const getSvg = async name => {
@@ -19,12 +20,11 @@ const getSvg = async name => {
     return svg
 }
 
-export const ElIcon = ({ text, style, ...props }: ElIconProps) => {
+export const ElSvg = ({ i18n, style, ...props }: ElSvgProps) => {
     const {
         width = '1em',
         height = '1em',
         viewBox = '0 0 24 24',
-        role = 'img',
         cacheRoot = document.getElementById('svg-root'),
         cache = true
     } = props
@@ -44,9 +44,8 @@ export const ElIcon = ({ text, style, ...props }: ElIconProps) => {
     const isCached = cacheRoot.querySelector(svgId)
 
     const defaultsSvgAttr = {
-        'aria-label': text.ariaLabel,
+        'aria-label': i18n?.ariaLabel ?? '',
         height,
-        role,
         width,
         viewBox
     }

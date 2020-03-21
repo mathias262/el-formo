@@ -10,3 +10,5 @@
 ## Description
 
 ## TODO
+
+-   Implement two different base interfaces (interactive and non-interactive)

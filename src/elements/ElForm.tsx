@@ -1,33 +1,27 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 import { css } from 'goober'
 
 // https://html.spec.whatwg.org/multipage/#the-form-element
 
-import { ChildElementProps } from '../utils/types/types'
+import { ElInterface } from '../utils/types/types'
 
-export interface ElFormProps {
-    ariaLabel: string
-    children?: ChildElementProps
-    onSubmit: (e: any) => void
-    [x: string]: any
+export interface ElFormProps extends ElInterface {
+    name: string
+    onSubmit: (e: FormEvent) => any
+    target?: string
 }
 
-export const ElForm = ({ ariaLabel, ...props }: ElFormProps) => {
+export const ElForm = ({ name, style, ...props }: ElFormProps) => {
     const className = css`
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         grid-gap: var(--spacing-8);
         padding: var(--spacing-8);
         background: var(--color-gray-100);
-        ${props.style}
+        ${style}
     `
     return (
-        <form
-            aria-label={ariaLabel}
-            className={className}
-            onSubmit={props.onSubmit}
-            {...props}
-        >
+        <form className={className} {...props}>
             {props.children}
         </form>
     )
