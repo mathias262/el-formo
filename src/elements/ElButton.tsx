@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from 'goober'
 
 import { shouldTextBeDark } from '../utils/ts/should-text-be-dark'
+import * as STYLES from '../utils/styles/styles'
 
 // https://html.spec.whatwg.org/#the-button-element
 
@@ -31,12 +32,10 @@ export const ElButton = ({ style, children, ...props }: ElButtonProps) => {
         justify-content: center;
         margin: var(--spacing-0);
         padding: var(--spacing-2);
-        &:disabled {
-            cursor: not-allowed;
-        }
         > :not(:first-child) {
             margin-left: var(--spacing-2);
         }
+        ${STYLES.disabled()}
         ${style}
     `
     return (

@@ -13,23 +13,27 @@ glob`
     :root {
         ${generateCssVariables(CSS)}
     }
+
     html {
         font-size: 100%;
         font-family: var(--font-family-sans);
     }
+
     body {
         margin: 0;
     }
+
     * {
         box-sizing: border-box;
     }
+    
     button,
     input,
     optgroup,
     select,
     textarea {
         font-family: inherit;
-        font-size: 100%;
+        font-size: var(--font-size-base);
         line-height: 1.15;
         margin: 0;
     }

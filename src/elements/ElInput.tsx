@@ -42,7 +42,6 @@ export const ElInput = ({ style, ...props }: ElInputProps) => {
     }
 
     const className = css`
-        font-size: var(--font-size-base);
         width: 100%;
         display: block;
         ${typeStyle(type)}
