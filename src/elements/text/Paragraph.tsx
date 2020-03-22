@@ -1,9 +1,9 @@
 import React, { ReactComponentElement } from 'react'
 import { css } from 'goober'
 
-import { ElementInterface } from '../../utils/types/types'
+import { ElementInterface as EI } from '../../utils/types/types'
 
-export interface ElementProps extends ElementInterface {
+export interface ElementProps extends EI {
     tag?: string
     displayTag?: string
 }

@@ -3,9 +3,9 @@ import { css } from 'goober'
 
 // https://html.spec.whatwg.org/multipage/#the-form-element
 
-import { ElementInterface } from '../../utils/types/types'
+import { ElementInterface as EI } from '../../utils/types/types'
 
-export interface ElementProps extends ElementInterface {
+export interface ElementProps extends EI {
     name: string
     onSubmit: (e: FormEvent) => any
     target?: string

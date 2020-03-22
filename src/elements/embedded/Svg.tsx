@@ -4,9 +4,9 @@ import { css } from 'goober'
 
 // https://www.w3.org/TR/SVG11/
 
-import { ElementInterface } from '../../utils/types/types'
+import { ElementInterface as EI } from '../../utils/types/types'
 
-export interface ElementProps extends ElementInterface {
+export interface ElementProps extends EI {
     cache?: boolean
     cacheRoot?: HTMLElement
     height?: string

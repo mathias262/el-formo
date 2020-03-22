@@ -3,11 +3,11 @@ import { css } from 'goober'
 
 //https://html.spec.whatwg.org/multipage/input.html#the-input-element
 
-import { ElementInterface } from '../../utils/types/types'
+import { ElementInterface as EI } from '../../utils/types/types'
 
 export type InputTypes = 'text' | 'number' | 'email' | 'password'
 
-export interface ElementProps extends ElementInterface {
+export interface ElementProps extends EI {
     type: InputTypes
     name: string
     placeholder?: string

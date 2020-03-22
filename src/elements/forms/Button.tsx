@@ -6,9 +6,9 @@ import * as STYLES from '../../utils/styles/styles'
 
 // https://html.spec.whatwg.org/#the-button-element
 
-import { ElementInterface } from '../../utils/types/types'
+import { ElementInterface as EI } from '../../utils/types/types'
 
-export interface ElementProps extends ElementInterface {
+export interface ElementProps extends EI {
     type?: 'button' | 'submit' | 'reset'
     onclick: (e: MouseEvent) => any
 }

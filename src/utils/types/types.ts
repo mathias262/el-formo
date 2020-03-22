@@ -1,6 +1,12 @@
 import { SVGProps } from 'react'
 
-export type ElementIndexType = string | boolean | Function | Array<any> | Object
+export type ElementInterfacePropertyTypes =
+    | string
+    | boolean
+    | Function
+    | Array<any>
+    | Object
+
 export type ElementChildren =
     | string
     | JSX.Element
@@ -8,7 +14,7 @@ export type ElementChildren =
     | SVGProps<SVGSVGElement>
 
 export interface ElementInterface {
-    [key: string]: ElementIndexType
+    [key: string]: ElementInterfacePropertyTypes
     id?: string
     className?: string
     children?: ElementChildren
