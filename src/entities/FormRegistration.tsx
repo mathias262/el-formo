@@ -6,7 +6,7 @@ import Form from '../elements/forms/Form'
 import Svg from '../elements/embedded/Svg'
 import P from '../elements/text/Paragraph'
 import { Span } from '../elements/text/TextSemantics'
-import { H1 } from '../elements/text/Heading'
+import { H1 } from '../elements/text/Headings'
 
 const FormRegistration = () => {
     return (
