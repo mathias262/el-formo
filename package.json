@@ -31,7 +31,10 @@
     "dependencies": {
         "@advisa/icons": "file:../icon-builder-example/pkg",
         "goober": "^1.7.1",
+        "preact": "^10.3.4",
         "react": "^16.12.0",
-        "react-dom": "^16.12.0"
+        "react-dom": "^16.12.0",
+        "react-router": "^5.1.2",
+        "react-router-dom": "^5.1.2"
     }
 }

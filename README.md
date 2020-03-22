@@ -11,7 +11,6 @@
 
 ## TODO
 
--   Remove React
 -   Add typedoc to auto generate documentation
--   Replace JSX with tagged templates
--   Implement two different base interfaces (interactive and non-interactive)
+-   Implement two different base interfaces (interactive and non-interactive elements?)
+-   Rewrite svg element so that it behaves better, as a component with lifecycle methods.

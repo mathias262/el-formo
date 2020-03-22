@@ -13,5 +13,12 @@ module.exports = {
                 }
             })
         ]
+    },
+    resolve: {
+        ...root.resolve,
+        alias: {
+            react: 'preact/compat',
+            'react-dom': 'preact/compat'
+        }
     }
 }

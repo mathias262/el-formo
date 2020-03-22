@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router'
 import { setPragma, glob } from 'goober'
 
 import CSS from './constants/css'
 import { generateCssVariables } from './utils/ts/generate-css-variables'
 
-import RHome from './routes/RHome'
+import RElements from './routes/RElements'
+import REntities from './routes/REntities'
 
 setPragma(React.createElement)
 
@@ -38,5 +41,32 @@ glob`
         margin: 0;
     }
 `
+const Router = () => {
+    return (
+        <BrowserRouter>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/elements">Elements</Link>
+                        </li>
+                        <li>
+                            <Link to="/entities">Entities</Link>
+                        </li>
+                    </ul>
+                </nav>
 
-ReactDOM.render(<RHome />, document.getElementById('root'))
+                <Switch>
+                    <Route path="/">
+                        <RElements />
+                    </Route>
+                    <Route path="/entities">
+                        <REntities />
+                    </Route>
+                </Switch>
+            </div>
+        </BrowserRouter>
+    )
+}
+
+ReactDOM.render(<Router />, document.getElementById('root'))
