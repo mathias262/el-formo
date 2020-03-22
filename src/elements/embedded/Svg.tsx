@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { css } from 'goober'
 
@@ -7,7 +7,6 @@ import { css } from 'goober'
 import { ElementInterface as EI } from '../../utils/types/types'
 
 export interface ElementProps extends EI {
-    cache?: boolean
     cacheRoot?: HTMLElement
     height?: string
     name: string
@@ -25,21 +24,20 @@ export default ({ i18n, style, ...props }: ElementProps) => {
         width = '1em',
         height = '1em',
         viewBox = '0 0 24 24',
-        cacheRoot = document.getElementById('svg-root'),
-        cache = true
+        cacheRoot = document.getElementById('svg-root')
     } = props
 
     const [svg, setSvg] = useState({
         source: '',
         metadata: { width: '', height: '' }
     })
-
-    getSvg(props.name)
-        .then(svg => {
-            setSvg(svg)
-        })
-        .catch(error => console.log(error))
-
+    useEffect(() => {
+        getSvg(props.name)
+            .then(svg => {
+                setSvg(svg)
+            })
+            .catch(error => console.log(error))
+    })
     const svgId = `#svg-${props.name}`
     const isCached = cacheRoot.querySelector(svgId)
 
@@ -65,7 +63,7 @@ export default ({ i18n, style, ...props }: ElementProps) => {
     return (
         <>
             {!svg.source && <div>...</div>}
-            {svg.source && cache && cacheRoot && (
+            {svg.source && cacheRoot && (
                 <>
                     <svg className={className} {...defaultsSvgAttr} {...props}>
                         <use href={svgId} xlinkHref={svgId}></use>
@@ -82,7 +80,7 @@ export default ({ i18n, style, ...props }: ElementProps) => {
                         )}
                 </>
             )}
-            {svg.source && !cache && (
+            {svg.source && !cacheRoot && (
                 <svg
                     className={className}
                     dangerouslySetInnerHTML={{ __html: svg.source }}

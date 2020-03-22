@@ -10,7 +10,7 @@ import { ElementInterface as EI } from '../../utils/types/types'
 
 export interface ElementProps extends EI {
     type?: 'button' | 'submit' | 'reset'
-    onclick: (e: MouseEvent) => any
+    onClick: (e: any) => any
 }
 
 export default ({

@@ -31,7 +31,7 @@ const FormRegistration = () => {
                 defaultValue=""
                 pattern="hello world"
             />
-            <Button type="button" onclick={e => console.log(e)}>
+            <Button type="button" onClick={e => console.log(e)}>
                 <Svg
                     name={'airplay'}
                     width="1em"
@@ -42,7 +42,7 @@ const FormRegistration = () => {
                     This is a very long and unnecessary text
                 </Span>
             </Button>
-            <Button type="button" onclick={e => console.log(e)}>
+            <Button type="button" onClick={e => console.log(e)}>
                 <Svg
                     name={'airplay'}
                     width="1em"
@@ -51,7 +51,7 @@ const FormRegistration = () => {
                 />
                 <Span>This is a very long and unnecessary text</Span>
             </Button>
-            <Button type="button" disabled={true} onclick={e => console.log(e)}>
+            <Button type="button" disabled={true} onClick={e => console.log(e)}>
                 <Span>This is a long text</Span>
                 <Svg
                     name={'airplay'}
@@ -64,7 +64,6 @@ const FormRegistration = () => {
                 name={'activity'}
                 width="2em"
                 height="2em"
-                cache={false}
                 i18n={{ ariaLabel: 'Icon activity' }}
             />
             <Svg
@@ -81,7 +80,7 @@ const FormRegistration = () => {
             />
             <P>Random text yao!</P>
             <H1>Hejsan svejsan</H1>
-            <Button type="button" onclick={e => console.log(e)}>
+            <Button type="button" onClick={e => console.log(e)}>
                 what
             </Button>
         </Form>
