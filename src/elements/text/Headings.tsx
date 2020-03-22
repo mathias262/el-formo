@@ -1,4 +1,4 @@
-import React, { ReactComponentElement } from 'react'
+import React from 'react'
 import { css } from 'goober'
 
 import { ElementInterface as EI } from '../../utils/types/types'
