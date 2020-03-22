@@ -44,8 +44,10 @@ module.exports = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
-            react: 'preact/compat',
-            'react-dom': 'preact/compat'
+            // TODO: use preact, enable these lines and import the library!
+            //
+            // react: 'preact/compat',
+            // 'react-dom': 'preact/compat'
         }
     },
     module: {
